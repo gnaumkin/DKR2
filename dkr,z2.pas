@@ -1,5 +1,5 @@
 program z2;
-var str, substr, res:string; // фактические, глобальные, по ссылке
+var str, substr, res:string;
 len, sublen, i , j, k:integer;
 ff, fl:boolean;
 begin
@@ -14,11 +14,11 @@ begin
   i:=1;
   while (i <= len - sublen + 1) and (not ff or not fl) do
   begin
-    j := 1; // локальные
+    j := 1;
     k := i;
     while (j <= sublen) and (str[k] = substr[j]) do
     begin
-      j := j+1; // формальные
+      j := j+1;
       k := k+1;
     end;
     if j > sublen then
@@ -41,6 +41,6 @@ begin
     else
       i := length(str) + 1;
   end;
-  writeln('Результат:', str); // фактические
+  writeln('Результат:', str);
   readln;
 end.
